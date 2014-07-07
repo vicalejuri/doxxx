@@ -2,6 +2,10 @@
   "packages": {
     "autoform": {},
     "external-file-loader": {},
-    "npm": {}
+    "npm": {},
+    "inspector": {},
+    "iron-router": {},
+    "static-server": {},
+    "scss": {}
   }
 }

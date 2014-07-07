@@ -4,13 +4,17 @@
     "basePackages": {
       "autoform": {},
       "external-file-loader": {},
-      "npm": {}
+      "npm": {},
+      "inspector": {},
+      "iron-router": {},
+      "static-server": {},
+      "scss": {}
     },
     "packages": {
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.13.5",
-        "commit": "27dd5b912eeba687b228a6a7c2c14eef63b12cca"
+        "tag": "v0.14.0",
+        "commit": "30de032833052ea61e9d37bca5523264309d4478"
       },
       "external-file-loader": {
         "git": "https://github.com/davidd8/meteor-external-file-loader.git",
@@ -21,6 +25,26 @@
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "inspector": {
+        "git": "https://github.com/broth-eu/meteor-inspector.git",
+        "tag": "v0.2.2",
+        "commit": "d3e5e4a760133f8d97b6457befc6e8ea1b42a010"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "static-server": {
+        "git": "https://github.com/williamledoux/meteor-static-server.git",
+        "tag": "v0.1.0",
+        "commit": "0ab5f2d7da0d6ddea638a36151e97a9e5b75a105"
+      },
+      "scss": {
+        "git": "https://github.com/fourseven/meteor-scss.git",
+        "tag": "v0.9.3",
+        "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
@@ -36,6 +60,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
       }
     }
   }

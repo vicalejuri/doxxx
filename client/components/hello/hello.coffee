@@ -1,0 +1,2 @@
+Template.hello.greeting = ->
+    "Hello!"
