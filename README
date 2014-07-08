@@ -1,8 +1,17 @@
-# Kambo
+# Doxxx
 
-WebGL multimedia app
-Mix and remix multimedia.
+Doxxx is a small online community for sharing  online
+documentaries and cinema. We don't use robots to
+
+We aim to be a small , but active and supportive community.
+Please Watch, Share and Contribute with your good taste.
+
+- We don't like automagic reccomendations by machinez&algorithms (netflix, youtube, etc).
+- We believe the answer for 'information overflow' and 'meaningless information' is human curated content by experts.
+
 
 # Install
 
+$ git clone XXX
+$ cd XXX
 $ mrt

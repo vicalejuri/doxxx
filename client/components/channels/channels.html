@@ -1,0 +1,16 @@
+<template name="channel_overview">
+    <section class="channel_overview">
+        {{c_channel.name}}
+    </section>
+</template>
+
+
+<template name="channel_list">
+    <section class="channel_list">
+        {{#each post}}
+            <div class="post-mini">
+                {{post.title}}
+            </div>
+        {{/each}}
+    </section>
+</template>

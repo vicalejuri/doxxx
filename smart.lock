@@ -3,18 +3,28 @@
   "dependencies": {
     "basePackages": {
       "autoform": {},
+      "collection2": {},
       "external-file-loader": {},
       "npm": {},
       "inspector": {},
       "iron-router": {},
+      "fast-render": {},
+      "marked": {},
       "static-server": {},
-      "scss": {}
+      "scss": {},
+      "bourbon": {},
+      "neat": {}
     },
     "packages": {
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
         "tag": "v0.14.0",
         "commit": "30de032833052ea61e9d37bca5523264309d4478"
+      },
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.4.2",
+        "commit": "4ff4b707bec8be434919730bf101325adb215444"
       },
       "external-file-loader": {
         "git": "https://github.com/davidd8/meteor-external-file-loader.git",
@@ -36,6 +46,16 @@
         "tag": "v0.7.1",
         "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.2.8",
+        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.2",
+        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
+      },
       "static-server": {
         "git": "https://github.com/williamledoux/meteor-static-server.git",
         "tag": "v0.1.0",
@@ -46,15 +66,20 @@
         "tag": "v0.9.3",
         "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
       },
+      "bourbon": {
+        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
+        "tag": "v3.1.8.1",
+        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
+      },
+      "neat": {
+        "git": "https://github.com/chicagogrooves/meteor-neat.git",
+        "tag": "v1.5.0",
+        "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
+      },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
         "tag": "v0.5.1",
         "commit": "a29956b34d03a4591dbd0eaed9d37009ef48b8db"
-      },
-      "collection2": {
-        "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.2",
-        "commit": "4ff4b707bec8be434919730bf101325adb215444"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",

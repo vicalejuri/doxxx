@@ -1,11 +1,16 @@
 {
   "packages": {
     "autoform": {},
+    "collection2": {},
     "external-file-loader": {},
     "npm": {},
     "inspector": {},
     "iron-router": {},
+    "fast-render": {},
+    "marked": {},
     "static-server": {},
-    "scss": {}
+    "scss": {},
+    "bourbon": {},
+    "neat": {}
   }
 }

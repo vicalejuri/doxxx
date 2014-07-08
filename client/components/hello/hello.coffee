@@ -1,2 +1,2 @@
 Template.hello.greeting = ->
-    "Hello!"
+    "Greetingz!"
