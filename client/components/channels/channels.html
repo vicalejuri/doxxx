@@ -1,13 +1,17 @@
+<!-- Overview of a channel -->
 <template name="channel_overview">
     <section class="channel_overview">
-        {{c_channel.name}}
+        <h1>{{c_channel.name}}</h1>
     </section>
+    
+    {{>channel_list c_channel}}
 </template>
 
 
+<!-- Top Channel videos -->
 <template name="channel_list">
     <section class="channel_list">
-        {{#each post}}
+        {{#each fetchChannelPosts}}
             <div class="post-mini">
                 {{post.title}}
             </div>

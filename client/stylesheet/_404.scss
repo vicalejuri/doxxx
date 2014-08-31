@@ -1,0 +1,45 @@
+
+/*
+
+
+|  |,--.|  |
+`--||  |`--|
+   ||  |   |
+   ``--'   `
+
+*/
+
+.notfound {
+    @include position( relative );
+    @include size(100% 100%);
+
+    .bg {
+        @include position( absolute );
+        @include size(100% 100%);
+        background-image: url(/images/fucktumblr.gif);
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .error {
+        @include position( absolute , 50% auto auto 50%);
+        @include transform( translate(-50% , -50%));
+        @include size(auto auto);
+
+        /*
+        padding: 30px;
+        background-color: rgba(0,0,0,0.0);
+        border-radius: 10px;
+        */
+
+        text-align: center;
+
+        .logo {
+            font-weight: 700px;
+        }
+
+        .description {
+            margin-top: 60px;
+        }
+    }
+}

@@ -18,13 +18,13 @@
     "packages": {
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.14.0",
-        "commit": "30de032833052ea61e9d37bca5523264309d4478"
+        "tag": "v0.17.1",
+        "commit": "a4688e7d77019a68ef43c2a303e905748beeb860"
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.2",
-        "commit": "4ff4b707bec8be434919730bf101325adb215444"
+        "tag": "v0.4.6",
+        "commit": "80554182486be0d8e74f7ed02194a5649d712e27"
       },
       "external-file-loader": {
         "git": "https://github.com/davidd8/meteor-external-file-loader.git",
@@ -43,28 +43,28 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.7.1",
-        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+        "tag": "v0.8.2",
+        "commit": "05415a8891ea87a00fb1e2388585f2ca5a38e0da"
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.8",
-        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+        "tag": "v1.0.0",
+        "commit": "acbc04982025fe78cebb8865b5a04689741d4b0b"
       },
       "marked": {
         "git": "https://github.com/chuangbo/meteor-marked.git",
-        "tag": "v0.3.2",
-        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
+        "tag": "v0.3.3",
+        "commit": "a0966771f9108835755368d0879429675d7e0db4"
       },
       "static-server": {
         "git": "https://github.com/williamledoux/meteor-static-server.git",
-        "tag": "v0.1.0",
-        "commit": "0ab5f2d7da0d6ddea638a36151e97a9e5b75a105"
+        "tag": "v0.1.1",
+        "commit": "e10151f6a52ae340c1bf6439000be49f46b8a691"
       },
       "scss": {
         "git": "https://github.com/fourseven/meteor-scss.git",
-        "tag": "v0.9.3",
-        "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
+        "tag": "v0.9.4",
+        "commit": "b5ebfe2bb8a58a03966b6f49e185544a0233ddb0"
       },
       "bourbon": {
         "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
@@ -78,18 +78,33 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.5.1",
-        "commit": "a29956b34d03a4591dbd0eaed9d37009ef48b8db"
+        "tag": "v0.7.0",
+        "commit": "77d267aec4ba8a70f677e5d9ef9fb91fb0e3f0f6"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+        "tag": "v2.8.1",
+        "commit": "722ea63783d594341023836b7d418ab2567dab8c"
+      },
+      "iron-layout": {
+        "git": "https://github.com/EventedMind/iron-layout.git",
+        "tag": "v0.2.0",
+        "commit": "4a2d53e35ba036b0c189c7ceca34be494d4c6c97"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.4",
-        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+        "tag": "v0.2.5",
+        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
+      },
+      "iron-core": {
+        "git": "https://github.com/EventedMind/iron-core.git",
+        "tag": "v0.2.0",
+        "commit": "0e48b5dc50d03f01025b7b900fb5ce2f13d52cad"
+      },
+      "iron-dynamic-template": {
+        "git": "https://github.com/EventedMind/iron-dynamic-template.git",
+        "tag": "v0.2.1",
+        "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
       }
     }
   }

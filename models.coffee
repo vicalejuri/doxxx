@@ -1,4 +1,6 @@
-DoxxChannel = new Meteor.Collection "doxx_channel",
+
+
+ChannelModel = new Meteor.Collection "channels",
     schema:
         name:
             type:   String,
@@ -20,7 +22,7 @@ DoxxChannel = new Meteor.Collection "doxx_channel",
 
 
 
-DoxxVideo = new Meteor.Collection "doxx_videos",
+PostModel = new Meteor.Collection "posts",
     schema:
         channel:
             type:  String
@@ -48,3 +50,5 @@ DoxxVideo = new Meteor.Collection "doxx_videos",
         oembed:
             type: Object
             optional: true
+
+

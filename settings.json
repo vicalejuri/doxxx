@@ -10,5 +10,10 @@
         "enabled" : true,
         "maxwidth": 900,
         "api_key": "705c38a211be4c9ba18f3e99fb851b4b"
+    },
+    "channels": {
+        "enabled": true,
+        "default": "frontpage",
+        "algorithm": "postlist"
     }
 }
