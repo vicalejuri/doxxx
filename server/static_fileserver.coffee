@@ -1,10 +1,10 @@
 fs                  = Npm.require 'fs'
-colors              = Meteor.require 'colors'
+colors              = Meteor.npmRequire 'colors'
 
 
 # DEPRECATED
 # node_static module File Server
-static_fileserver   = Meteor.require 'node-static'
+static_fileserver   = Meteor.npmRequire 'node-static'
 class NodeStaticFileServer
     constructor: (@settings) ->
         @file_server = new static_fileserver.Server( @settings.disk_path ? './public' )
@@ -18,7 +18,7 @@ class NodeStaticFileServer
 
 #
 # Connect.js File Server. 
-connect             = Meteor.require 'connect'
+connect             = Meteor.npmRequire 'connect'
 class ConnectFileServer
     constructor: (@settings) ->
         console.log connect

@@ -1,6 +1,6 @@
 return unless Meteor.isServer
 
-http = Meteor.require 'http'
+http = Meteor.npmRequire 'http'
 
 getURLInfo = (url) ->
     ###
