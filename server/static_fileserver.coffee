@@ -7,8 +7,9 @@ colors              = Meteor.npmRequire 'colors'
 static_fileserver   = Meteor.npmRequire 'node-static'
 class NodeStaticFileServer
     constructor: (@settings) ->
-        @file_server = new static_fileserver.Server( @settings.disk_path ? './public' )
         @log         = new AppLog('FileServer')
+        @file_server = new static_fileserver.Server( @settings.disk_path ? "#{__dirname}/public" )
+
 
     start: ->
         @log.log("Serving #{@settings.disk_path}")
@@ -19,17 +20,15 @@ class NodeStaticFileServer
 #
 # Connect.js File Server. 
 connect             = Meteor.npmRequire 'connect'
-class ConnectFileServer
+class ConnectFileServer extends StaticServer
     constructor: (@settings) ->
-        console.log connect
-        @file_server = connect.static( @settings.disk_path ? './public' )
         @log         = new AppLog('ConnectFileServer')
+        @file_server = connect.static( @settings.disk_path ? './public' )
 
     start: ->
         @log.log("Serving ", "#{@settings.disk_path}".green, 
-                 " to ", "#{@settings.public_path}".magenta )
+                 " as ", "#{@settings.public_path}".magenta )
 
-        RoutePolicy.declare @settings.public_path, 'network'
         WebApp.connectHandlers.use @settings.public_path ,  @file_server
 
 
@@ -44,4 +43,6 @@ Meteor.startup ->
 
     return unless fs_settings.enabled
 
-    kambo_fileServer = StaticServer.add( fs_settings.public_path , fs_settings.disk_path )
+    #kambo_fileServer = StaticServer.add( fs_settings.public_path , fs_settings.disk_path )
+    fs_server = new ConnectFileServer( fs_settings )
+    fs_server.start()

@@ -1,3 +1,5 @@
 .meteor/local
 packages/npm-container/.build*
 packages/npm-container/.npm/package/node_modules
+
+.DS_Store

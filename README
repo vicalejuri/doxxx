@@ -12,6 +12,22 @@ Please Watch, Share and Contribute with your good taste.
 
 # Install
 
-$ git clone XXX
-$ cd XXX
-$ mrt
+    $ git clone XXX
+    $ cd XXX
+
+Add some dependencies manually
+
+    $ mrt add boubon neat bitters
+
+Now try to fetch all deps autoamtically
+
+    $ meteor
+
+ It may talk about <NPM> dependencies. Run again meteor to ftch it.
+
+    $ meteor
+
+## Running
+
+
+    $ meteor --settings=settings.json

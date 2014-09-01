@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "bitters": {},
+    "neat": {},
+    "bourbon": {},
+    "bbfc:refills": {
+        "git": "https://github.com/barrabinfc/meteor-refills"
+    }
+  }
+}

@@ -1,5 +1,3 @@
-
-
 ChannelModel = new Meteor.Collection "channels",
     schema:
         name:
@@ -50,5 +48,4 @@ PostModel = new Meteor.Collection "posts",
         oembed:
             type: Object
             optional: true
-
 

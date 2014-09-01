@@ -6,14 +6,18 @@
 standard-app-packages
 autopublish
 insecure
-meteorhacks:npm
+amplify
 cmather:iron-router
 williamledoux:static-server
-bbfc:scss
-ciara:bourbon
-ciara:neat
-npm-container
 coffeescript
 aldeed:collection2
 aldeed:autoform
+
+
+
+meteorhacks:npm
+
+fourseven:scss
+
+npm-container
 

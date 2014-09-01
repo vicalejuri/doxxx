@@ -1,7 +1,5 @@
 {
   "connect": "2.0.1",
   "node-static": "0.7.3",
-  "colors": "0.6.2",
-  "node-sass": "0.9.3",
-  "node-bourbon": "1.2.3"
+  "colors": "0.6.2"
 }

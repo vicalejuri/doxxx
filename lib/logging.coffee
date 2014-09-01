@@ -5,7 +5,7 @@ class _AppLog
         console.log.apply( null, logMsg )
 
     log: ( logMsg... ) ->
-        console.log.apply( null,  ["#{@name}: ",logMsg...] )
+        console.log.apply( null,  ["[#{@name}] ",logMsg...] )
 
 @AppLog = _AppLog
-@kambo_log = new AppLog('AppLog')
+@DoxxLog = new AppLog('AppLog')

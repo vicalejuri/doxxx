@@ -1,0 +1,7 @@
+{
+  "includePaths": [
+    "packages/bourbon",
+    "packages/bitters/base",
+    "packages/neat"
+  ]
+}

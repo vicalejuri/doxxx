@@ -1,7 +1,3 @@
-@import "packages/bourbon/bourbon";
-@import "packages/bitters/base";
-@import "packages/neat/neat";
-
 $line-height: 22px;
 $video-color: red;
 $data-color: green;
@@ -11,15 +7,26 @@ $black: #000;
 $white: #efefef;
 $red: rgb(255, 63, 63);
 
-$base-font: 'Lato';
-$base-font-weight: 400;
+$helvetica: "PT Sans";
 
-$heading-font: 'Oswald';
+$base-font: 'PT Sans';
+$base-font-weight: 200;
+
+$heading-font: 'PT Sans';
 $heading-font-weight: 400;
 
+$sans-serif: 'Open Sans', sans-serif;
+$serif: 'Roboto Slab', serif;
 
-@import "packages/refills/video.scss";
-@import "packages/refills/modal.scss";
+
+
+
+@import "packages/bourbon/bourbon";
+@import "packages/bitters/base/base";
+@import "packages/neat/neat";
+
+@import "packages/bbfc:refills/refills/video.scss";
+@import "packages/bbfc:refills/refills/modal.scss";
 
 * {
   margin: 0;
@@ -47,11 +54,6 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: top;
   font-family: $heading-font;
   font-weight: $heading-font-weight;
-}
-
-.container[role="main"] {
-    @include outer-container;
-    width: 80%;
 }
 
 img {
@@ -99,6 +101,7 @@ a {
 .container[role="main"] {
     @include outer-container;
 
+    width: 80%;
     padding-top: $navigation-height;
 }
 
