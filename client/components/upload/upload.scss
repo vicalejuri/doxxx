@@ -1,0 +1,16 @@
+@import "packages/bourbon/bourbon";
+@import "packages/neat/neat";
+
+.upload {
+    @include outer-container;
+
+    .url-previewer {
+        @include span-columns(12);
+        @include omega();
+    }
+
+    .post-preview {
+        @include span-columns(12);
+        @include omega();
+    }
+}

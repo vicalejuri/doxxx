@@ -7,7 +7,6 @@
         "public_path": "/assets"
     },
     "embed": {
-        "enabled" : true,
         "maxwidth": 900,
         "key": "705c38a211be4c9ba18f3e99fb851b4b"
     },
@@ -15,5 +14,10 @@
         "enabled": true,
         "default": "frontpage",
         "algorithm": "postlist"
+    },
+    "public": {
+        "channels": {
+            "default": "frontpage"
+        }
     }
 }

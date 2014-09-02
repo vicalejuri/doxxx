@@ -15,7 +15,29 @@
 <template name="upload">
   <div class="upload">
       <h1>Submit video</h1>
-      <p class="intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
-      <p class="body">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam.</p>
+
+      <fieldset>
+          <form>
+            <div class="url-previewer">
+              <label for="url">URL:</label>
+              <input type="text" name="url" id="url">
+            </div>
+          </form>
+          {{#if has_preview }}
+              {{> post_preview_form }}
+              <div class="submit btn js-btn">Upload</div>
+          {{/if }}
+      </fieldset>
   </div>
 </template>
+
+
+
+<template name="post_preview_form">
+  <div class="post-preview"> 
+    {{#video}}
+      {{{preview_post_embed}}}
+    {{/video}}
+  </div>
+</template>
+

@@ -26,4 +26,6 @@
         selected: 'channels.selected'
 
     post:
-        preview_url: 'post.preview_url'
+        preview_url:    'post.preview_url'
+        preview_post:   'post.preview_post'
+        selected:       'post.selected'
