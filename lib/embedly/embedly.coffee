@@ -1,28 +1,27 @@
 return unless Meteor.isServer
 
-http = Meteor.require 'http'
+qs = Meteor.npmRequire 'querystring'
+colors              = Meteor.npmRequire 'colors'
+
+embedlyLogger = new AppLog('embedly')
 
 getURLInfo = (url) ->
     ###
         Syncrhonous URL Info fetcher
     ###
-    console.log("WTF")
-    embed = Meteor.settings.embed ? {enabled: true}
+    _embed = Meteor.settings.embed ? {enabled: true}
+    _embedly_uri = 'http://api.embed.ly/1/extract';
 
-    extract_uri = 'http://api.embed.ly/1/extract';
+    params = _.extend( _embed, {format: 'json', url: url} )
+    params_qs = qs.stringify( params )
 
-    _req = _.wrapAsync( Meteor.http.get )
-    
-    res = _req( extract_uri, {params: {
-        maxwidth: embed.maxwidth,
-        key: embed.api_key,
-        url: url
-    }} )
+    sync_request = Meteor._wrapAsync( HTTP.get )
+    response     = sync_request( "#{_embedly_uri}?#{params_qs}" )
 
-    return res
+    embedlyLogger.log( 'getURLInfo', "Extracted ", "#{url}".magenta )
+
+    return response
 
 
 Meteor.methods
     'getURLInfo': getURLInfo
-    'fuck': ->
-        return 'YEAP'

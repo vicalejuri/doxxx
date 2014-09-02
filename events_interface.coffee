@@ -17,8 +17,13 @@
     </RANT END>
 
 ###
-EvsEnum =
-    layoutChaned:   'layoutChanged'
+@EvsEnum =
+    layout:
+        changed:   'layout.changed'
 
-SessEnum =
-    selectedChannel: 'selectedChannel'
+@SessEnum =
+    channels: 
+        selected: 'channels.selected'
+
+    post:
+        preview_url: 'post.preview_url'
