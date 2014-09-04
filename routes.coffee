@@ -7,7 +7,7 @@ Router.onBeforeAction 'loading'
 Router.map ->
     this.route 'home', 
         path: '/', layoutTemplate: 'page'
-        template: 'hello'
+        template: 'videofeed'
         yieldTemplates:
             header:   {to: 'header'}
 

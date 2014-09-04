@@ -1,30 +1,26 @@
-UI.registerHelper 'has_preview', ->
-    return Session.get( SessEnum.post.preview_post )?
-
-UI.registerHelper 'preview_post_embed', ->
-    return Session.get( SessEnum.post.preview_post )?.media.html
-
 Template.upload.events = _.extend( {
     'click .submit': (ev) ->
-        Models.Post.insert( Session.get( SessEnum.post.preview_post ) )
+        _new_post = Session.get( SessEnum.post.upload.preview_post )
+        Models.Post.insert( _new_post )
     }, 
     LiveTextInput('#url', {
         'ok': (text, ev) ->
-            console.log("URL is -> #{text}");
-            Session.set( SessEnum.post.preview_url, text )
+            Session.set( SessEnum.post.upload.preview_url, text )
             Deps.flush()
     })
 )
 
+
 #  Preview of url upload
 preview_url_autorun = ->
-    preview_url = Session.get( SessEnum.post.preview_url )
+    preview_url = Session.get( SessEnum.post.upload.preview_url )
 
     # TODO: Add error msg
-    return if not preview_url
+    return if not preview_url?
 
+    # Try to get more info, dispatch preview_post
     Models.Post.previewURL preview_url , (err, preview_post ) ->
-        Session.set( SessEnum.post.preview_post , preview_post )
+        Session.set( SessEnum.post.upload.preview_post , preview_post )
         Deps.flush()
 
 

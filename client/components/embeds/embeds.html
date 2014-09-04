@@ -1,0 +1,25 @@
+<template name="video">
+<div class="video">
+  <div class="video-wrapper">
+    {{{html}}}
+  </div>
+</div>
+</template>
+
+<template name="rich">
+<div class="rich">
+    <div class="rich-wrapper">
+        {{{html}}}
+    </div>
+</div>
+</template>
+
+<template name="photo">
+    <img src="{{url}}">
+</template>
+
+
+<!-- Smart Embed by post-type -->
+<template name="smart_embed">
+    {{> UI.dynamic template=post.type data=post }}
+</template>

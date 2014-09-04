@@ -3,4 +3,4 @@
 SETTINGS_FILE="settings.json"
 export NODE_OPTIONS="--debug"
 
-mrt --settings=${SETTINGS_FILE} &
+meteor --settings=${SETTINGS_FILE}

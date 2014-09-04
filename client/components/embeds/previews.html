@@ -1,0 +1,11 @@
+<template name="video_thumbnail">
+<div class="video_thumbnail">
+  <div class="video-wrapper">
+    {{{html}}}
+  </div>
+</div>
+</template>
+
+<template name="embed_preview">
+    {{> UI.dynamic template=post.type data=post }}
+</template>

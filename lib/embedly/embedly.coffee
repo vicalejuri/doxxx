@@ -10,7 +10,7 @@ getURLInfo = (url) ->
         Syncrhonous URL Info fetcher
     ###
     _embed = Meteor.settings.embed
-    _embedly_uri = 'http://api.embed.ly/1/extract';
+    _embedly_uri = 'http://api.embed.ly/1/oembed';
 
     params = _.extend( _embed, {format: 'json', url: url} )
     params_qs = qs.stringify( params )

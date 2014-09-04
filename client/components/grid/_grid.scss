@@ -1,0 +1,17 @@
+.grid-wrapper {
+  @include outer-container;
+
+  .grid-item {
+    @include span-columns(4);
+    @include omega(3n);
+
+    padding: 1em;
+  }
+}
+
+.placeholder {
+  @include fill-parent;
+
+  background-color: #f00;
+  height: 8em;
+}

@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 amplify
 cmather:iron-router
@@ -23,4 +22,3 @@ npm-container
 mrt:server-eval
 reactive-dict
 http
-

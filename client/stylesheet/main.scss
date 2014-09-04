@@ -1,37 +1,16 @@
-@import "variables.scss";
 @import "packages/bourbon/bourbon";
-@import "packages/bitters/base/base";
 @import "packages/neat/neat";
+
+@import "client/stylesheet/_variables.scss";
+@import "packages/bitters/base/base";
 
 @import "packages/bbfc:refills/refills/video.scss";
 @import "packages/bbfc:refills/refills/modal.scss";
 
-* {
-  margin: 0;
-  padding: 0;
-  @include box-sizing(border-box);
-}
-
-
-body,html {
-  background: $black;
-  font-family: $base-font;
-  font-weight: $base-font-weight;
-  font-size: 16px;
-  height: 100%;
-  @include prefixer(font-smoothing, antialiased, webkit moz spec);
-
-  line-height: $line-height;
-  letter-spacing: 1px;
-  color: $white;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  line-height: 18px;
   font-size: 24px;
-  vertical-align: top;
-  font-family: $heading-font;
-  font-weight: $heading-font-weight;
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
 }
 
 img {
@@ -40,13 +19,12 @@ img {
 
 a {
     &:link, &:visited {
-        color: $white;
         text-decoration: none;
-        border-bottom: 1px solid #bbb;
+        border-bottom: 1px solid $light-gray;
     }
 
     &:hover, &:active {
-        border-bottom: 2px solid $white;
+        border-bottom: 2px solid $dark-gray;
     }
 
     &.nostyle {
@@ -79,11 +57,15 @@ a {
 .container[role="main"] {
     @include outer-container;
 
-    width: 80%;
+    width: 90%;
+    text-align: center;
     padding-top: $navigation-height;
 }
 
 
+
+@import "client/components/grid/_grid";
+@import "client/components/upload/_upload";
 
 
 

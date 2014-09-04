@@ -22,10 +22,13 @@
         changed:   'layout.changed'
 
 @SessEnum =
-    channels: 
-        selected: 'channels.selected'
+    channels:
+        selected:         'channels.selected'            # Name of selected channel
+        object:           'channels.selected_object'     # Selected Channel Object
 
     post:
-        preview_url:    'post.preview_url'
-        preview_post:   'post.preview_post'
-        selected:       'post.selected'
+        upload:
+            preview_url:    'post.preview_url'               # Submit Preview URL
+            preview_post:   'post.preview_post'              # Submit preview (video)
+
+        current:        'post.current'                   # Currently watching video

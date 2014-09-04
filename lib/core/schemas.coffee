@@ -28,22 +28,21 @@ Schemas.Channel = new SimpleSchema
         label:  "Summary",
         optional: true
 
-
 Schemas.Post = new SimpleSchema
     channel:
         type:  String,
-        label: "Channel"
+        label: "Channel",
+        index: true
+
+    type:
+        type: String,
+        label: "Type"
 
     url: 
         type: String,
         regEx: SimpleSchema.RegEx.Url,
         label: "Original URL"
         index: true
-
-    original_url:
-        type: String,
-        regEx: SimpleSchema.RegEx.Url,
-        label: "Original URL"
 
     title:
         type: String,
