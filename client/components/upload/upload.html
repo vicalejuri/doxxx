@@ -17,25 +17,30 @@
       <h1>Submit video</h1>
 
       <fieldset>
-          <form>
-            <div class="url-previewer">
-              <label for="url">URL:</label>
-              <input type="text" name="url" id="url">
-            </div>
-          </form>
-          {{#if has_preview }}
-              {{> post_preview_form }}
-              <div class="submit btn js-btn">Upload</div>
-          {{/if }}
+          {{#with post=preview_post}}
+            {{#autoForm collection="Models.Post" type="update" doc=post id="PostUploadPreview"}}
+                <div class="url-previewer">
+                {{> afQuickField  name="url"}}
+                </div>
+                {{#if preview_post}}
+                    {{> post_preview_form context=post}}
+                {{/if}}
+            {{/autoForm}}
+          {{/with}}
       </fieldset>
+      <button type="submit" class="submit btn">--></button>
   </div>
 </template>
 
 
 
 <template name="post_preview_form">
-  <div class="post-preview"> 
-    {{video preview_post}}
-  </div>
+
+  {{> afQuickField  name="title"}}
+  {{> afQuickField  name="description"}}
+
+    <div class="post-preview"> 
+      {{> video media.[0]}}
+    </div>
 </template>
 

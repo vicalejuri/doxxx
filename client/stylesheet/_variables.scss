@@ -1,14 +1,15 @@
 // Typography
-$helvetica:  'Helvetica Neue';
+$helvetica:  'Oswald', 'Helvetica Neue', serif;
 $sans-serif: 'Open Sans', sans-serif;
 $serif:      'Roboto Slab', serif;
+$monospace:   Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 
-$base-font-family: 'PT Sans';
-$base-font-weight: 200;
+$base-font-family: $sans-serif;
+$base-font-weight: 100;
+$base-font-size: 14px;
 
-$header-font-family: $base-font-family;
-$header-font-weight: 400;
-
+$header-font-family: $helvetica;
+$header-font-weight: 700;
 
 // Sizes
 $base-font-size: 1em;
@@ -16,6 +17,7 @@ $base-line-height: $base-font-size * 1.5;
 $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
 $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(3);
+
 
 // Colors
 $blue: #477DCA;
@@ -25,12 +27,15 @@ $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
+$pink: #BF21C5;
+$light-pink: #D733DD;
+
 
 // Background Color
 $base-background-color: black;
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: $light-gray;
 $base-accent-color: $blue;
 
 // Link Colors

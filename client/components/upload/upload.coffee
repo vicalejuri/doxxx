@@ -1,9 +1,12 @@
+preview_logger = new AppLog('uploadPreview')
+
 Template.upload.events = _.extend( {
     'click .submit': (ev) ->
         _new_post = Session.get( SessEnum.post.upload.preview_post )
+        preview_logger.log('FuCK --> ', _new_post)
         Models.Post.insert( _new_post )
     }, 
-    LiveTextInput('#url', {
+    LiveTextInput('input[name="url"]', {
         'ok': (text, ev) ->
             Session.set( SessEnum.post.upload.preview_url, text )
             Deps.flush()
@@ -15,13 +18,18 @@ Template.upload.events = _.extend( {
 preview_url_autorun = ->
     preview_url = Session.get( SessEnum.post.upload.preview_url )
 
-    # TODO: Add error msg
     return if not preview_url?
 
     # Try to get more info, dispatch preview_post
     Models.Post.previewURL preview_url , (err, preview_post ) ->
+
+        # TODO: Show error msg to User
+        return if(err)
+
+        preview_logger.log( "#{preview_url} decoded successfully" )
+        preview_logger.log(preview_post.media)
+
         Session.set( SessEnum.post.upload.preview_post , preview_post )
-        Deps.flush()
 
 
 Meteor.startup ->

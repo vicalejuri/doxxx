@@ -1,5 +1,6 @@
 .upload {
     @include outer-container;
+    max-width: 970px;
 
     .url-previewer {
         @include span-columns(12);
@@ -9,5 +10,10 @@
     .post-preview {
         @include span-columns(12);
         @include omega();
+    }
+
+    .submit.btn {
+      @include square-button($pink);
+      float: right;
     }
 }

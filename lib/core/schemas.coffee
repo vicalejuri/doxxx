@@ -28,7 +28,12 @@ Schemas.Channel = new SimpleSchema
         label:  "Summary",
         optional: true
 
+
+
 Schemas.Post = new SimpleSchema
+    createdAt: SchemasField.createdAt
+    updatedAt: SchemasField.updatedAt
+
     channel:
         type:  String,
         label: "Channel",
@@ -37,11 +42,12 @@ Schemas.Post = new SimpleSchema
     type:
         type: String,
         label: "Type"
+        allowedValues: ['video','rich','photo','link']
 
     url: 
         type: String,
         regEx: SimpleSchema.RegEx.Url,
-        label: "Original URL"
+        label: "URL"
         index: true
 
     title:
@@ -53,11 +59,22 @@ Schemas.Post = new SimpleSchema
         type: String,
         label: "Description",
         optional: true
+        autoform: {
+            rows: 5 
+        }
 
     authors:
         type: [Object]
         label: "Authors"
-        optional: true
+        optional: false
+
+    "authors.$.author_name":
+        type: String,
+        optional: false
+
+    "authors.$.author_url":
+        type: String
+        optional: false
 
     keywords:
         type: [Object]
@@ -67,11 +84,37 @@ Schemas.Post = new SimpleSchema
     images:
         type: [Object],
         label: "Thumbnails",
-        optional: true
+        optional: false
+
+    "images.$.thumbnail_width":
+        type: Number,
+        optional: false
+
+    "images.$.thumbnail_height":
+        type: Number,
+        optional: false
+
+    "images.$.thumbnail_url":
+        type: SimpleSchema.RegEx.Url,
+        optional: false
 
     media:
-        type: Object
+        type: [Object],
+        label: "Media",
+        optional: false
+
+    "media.$.html":
+        type: String,
+        optional: false
+
+    "media.$.url":
+        type: String,
+        optional: false
+
+    "media.$.width":
+        type: String,
         optional: true
 
-    createdAt: SchemasField.createdAt
-    updatedAt: SchemasField.updatedAt
+    "media.$.height":
+        type: String,
+        optional: true
