@@ -8,9 +8,9 @@ youtubedlLogger = new AppLog('youtubedl')
 ###
 getYoutubeDownloadInfo = (url) ->
   
-    _youtubedl_call = Meteor._wrapAsync( youtubedl.getInfo )
+    _youtubedl_call = Meteor.wrapAsync( youtubedl.getInfo )
     info = _youtubedl_call( url )
-
+    info
 
 Meteor.methods
   'getDownloadInfo': getYoutubeDownloadInfo

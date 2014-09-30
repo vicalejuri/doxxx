@@ -1,0 +1,13 @@
+.debug-pane {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 9999999999;
+}
+
+.dg.main .close-button {
+    line-height: inherit !important;
+    height: inherit !important;
+
+    @include square-button($pink);
+}

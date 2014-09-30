@@ -1,4 +1,4 @@
-# Subscribe to the channel  posts!
+# Subscribe to the posts of the current channel
 @post_subscribe = null
 Meteor.startup ->
   Deps.autorun ->
@@ -10,7 +10,7 @@ Meteor.startup ->
 
 
 
-# Subscribe to channels
+# Subscribe to all channels
 @channel_subscribe = null
 Meteor.startup ->
   Deps.autorun ->

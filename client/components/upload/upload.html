@@ -17,17 +17,17 @@
       <h1>Submit video</h1>
 
       <fieldset>
-          {{#with post=preview_post}}
-            {{#autoForm collection="Models.Post" type="update" doc=post id="PostUploadPreview"}}
-                <div class="url-previewer">
-                {{> afQuickField  name="url"}}
-                </div>
-                {{#if preview_post}}
-                    {{> post_preview_form context=post}}
-                {{/if}}
-            {{/autoForm}}
-          {{/with}}
+        {{#autoForm id="PostUploadPreview" collection="Models.Post" type="insert" doc=preview_post }}
+            <div class="url-previewer">
+            {{> afQuickField  name="url"}}
+            </div>
+
+            {{#if preview_post}}
+                {{> post_preview_form preview_post }}
+            {{/if}}
+        {{/autoForm}}
       </fieldset>
+
       <button type="submit" class="submit btn">--></button>
   </div>
 </template>
@@ -36,11 +36,16 @@
 
 <template name="post_preview_form">
 
-  {{> afQuickField  name="title"}}
-  {{> afQuickField  name="description"}}
+  <div class="post_metadata">
+    <div class="metadata">
+        {{> afQuickField  name="description"}}
+        {{> afQuickField  name="tags"}}
+    </div>
 
     <div class="post-preview"> 
+      {{> afQuickField  name="title"}}
       {{> video media.[0]}}
     </div>
+  </div>
 </template>
 

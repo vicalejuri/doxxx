@@ -9,16 +9,16 @@ getURLInfo = (url) ->
     ###
         Syncrhonous URL Info fetcher
     ###
-    _embed = Meteor.settings.embed
+    _embed = Meteor.settings.embed ? {}
     _embedly_uri = 'http://api.embed.ly/1/oembed';
 
     params = _.extend( _embed, {format: 'json', url: url} )
     params_qs = qs.stringify( params )
 
     # Request
-    embedly_request = Meteor._wrapAsync (uri, cb) ->
+    embedly_request = Meteor.wrapAsync (uri, cb) ->
         HTTP.get uri, (err,res) ->
-            if(err?)
+            if(err?k
                 embedlyLogger.log( '(getURLInfo)', "Cant extract ", "#{url}".magenta )
                 cb(err,res)
 

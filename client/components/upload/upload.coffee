@@ -13,6 +13,16 @@ Template.upload.events = _.extend( {
     })
 )
 
+AutoForm.hooks
+    PostUploadPreview: 
+        onSubmit: ->
+            console.log("Submiting")
+
+        onSuccess: (op, res, template) ->
+            console.log(op,res,template)
+            preview_logger.log("Saved post successfully!")
+            $("#modal-upload").prop('checked',false)
+
 
 #  Preview of url upload
 preview_url_autorun = ->
@@ -27,7 +37,6 @@ preview_url_autorun = ->
         return if(err)
 
         preview_logger.log( "#{preview_url} decoded successfully" )
-        preview_logger.log(preview_post.media)
 
         Session.set( SessEnum.post.upload.preview_post , preview_post )
 

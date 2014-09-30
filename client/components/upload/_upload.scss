@@ -1,14 +1,18 @@
 .upload {
     @include outer-container;
-    max-width: 970px;
+    max-width: 90%;
 
     .url-previewer {
         @include span-columns(12);
         @include omega();
     }
 
+    .metadata {
+        @include span-columns(6);
+    }
+
     .post-preview {
-        @include span-columns(12);
+        @include span-columns(6);
         @include omega();
     }
 

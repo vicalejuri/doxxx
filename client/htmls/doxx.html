@@ -16,6 +16,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:300,500,700' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -28,6 +29,10 @@
     </div>
 
     {{> modal_upload}}
+
+    {{#if is_admin and is_debugger_enabled }}
+        {{> session_debug}}
+    {{/if}}
 </template>
 
 
