@@ -14,7 +14,7 @@
     @include size(100% 100%);
 
     .bg {
-        @include position( absolute );
+        @include position( fixed );
         @include size(100% 100%);
         background-image: url(/images/fucktumblr.gif);
         background-size: cover;
@@ -23,7 +23,7 @@
 
     .error {
         @include position( absolute , 50% auto auto 50%);
-        @include transform( translate(-50% , -50%));
+        @include transform( translate(-50% , 50%));
         @include size(auto auto);
 
         /*
@@ -33,6 +33,12 @@
         */
 
         text-align: center;
+
+        .icon  {
+            text-shadow: 0px 0px 10px #000;
+            line-height: 1.1em;
+            font-weight: bold;
+        }
 
         .logo {
             font-weight: 700px;

@@ -8,8 +8,8 @@
     }
 
     h1 {
-      background: url(http://i.giphy.com/KNEuNnTlppwcM.gif) 0px 0px;
-      color: white !important;
+      background: url(http://i.giphy.com/KNEuNnTlppwcM.gif) 350px -60px;
+      color: #33c5f3 !important;
     }
 
     .url-previewer {
@@ -32,5 +32,6 @@
     .submit.btn {
       @include square-button($pink);
       float: right;
+      width: 100%;
     }
 }
