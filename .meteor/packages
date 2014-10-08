@@ -6,7 +6,7 @@
 standard-app-packages
 insecure
 amplify
-cmather:iron-router
+iron:router
 williamledoux:static-server
 coffeescript
 aldeed:collection2
@@ -22,3 +22,7 @@ npm-container
 mrt:server-eval
 reactive-dict
 http
+accounts-ui
+accounts-password
+accounts-facebook
+

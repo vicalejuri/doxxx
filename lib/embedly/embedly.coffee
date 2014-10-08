@@ -1,6 +1,6 @@
 return unless Meteor.isServer
 
-qs = Meteor.npmRequire 'querystring'
+qs                  = Meteor.npmRequire 'querystring'
 colors              = Meteor.npmRequire 'colors'
 
 embedlyLogger = new AppLog('embedly')
@@ -18,7 +18,7 @@ getURLInfo = (url) ->
     # Request
     embedly_request = Meteor.wrapAsync (uri, cb) ->
         HTTP.get uri, (err,res) ->
-            if(err?k
+            if(err?)
                 embedlyLogger.log( '(getURLInfo)', "Cant extract ", "#{url}".magenta )
                 cb(err,res)
 

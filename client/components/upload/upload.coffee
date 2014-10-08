@@ -1,10 +1,6 @@
 preview_logger = new AppLog('uploadPreview')
 
 Template.upload.events = _.extend( {
-    'click .submit': (ev) ->
-        _new_post = Session.get( SessEnum.post.upload.preview_post )
-        preview_logger.log('FuCK --> ', _new_post)
-        Models.Post.insert( _new_post )
     }, 
     LiveTextInput('input[name="url"]', {
         'ok': (text, ev) ->
@@ -15,13 +11,23 @@ Template.upload.events = _.extend( {
 
 AutoForm.hooks
     PostUploadPreview: 
-        onSubmit: ->
-            console.log("Submiting")
+        onSubmit: (insertDoc, updateDoc, currentDoc)->
+            console.log("Submiting", insertDoc)
+            Schemas.Post.clean(insertDoc)
+            this.done()
+            false
 
         onSuccess: (op, res, template) ->
-            console.log(op,res,template)
             preview_logger.log("Saved post successfully!")
             $("#modal-upload").prop('checked',false)
+
+        docToForm: (doc) ->
+            doc.tags = doc.tags.join(", ") if _.isArray(doc.tags)
+            doc
+
+        formToDoc: (doc) ->
+            doc.tags = doc.tags.split(", ") if _.isString(doc.tags)
+            doc
 
 
 #  Preview of url upload

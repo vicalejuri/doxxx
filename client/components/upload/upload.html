@@ -14,10 +14,10 @@
 
 <template name="upload">
   <div class="upload">
-      <h1>Submit video</h1>
+      <h1>UPload video</h1>
 
+    {{#autoForm id="PostUploadPreview" collection="Models.Post" doc=preview_post }}
       <fieldset>
-        {{#autoForm id="PostUploadPreview" collection="Models.Post" type="insert" doc=preview_post }}
             <div class="url-previewer">
             {{> afQuickField  name="url"}}
             </div>
@@ -25,10 +25,10 @@
             {{#if preview_post}}
                 {{> post_preview_form preview_post }}
             {{/if}}
-        {{/autoForm}}
       </fieldset>
 
-      <button type="submit" class="submit btn">--></button>
+    <button type="submit" class="submit btn">UPLOAD</button>
+    {{/autoForm}}
   </div>
 </template>
 
@@ -38,12 +38,12 @@
 
   <div class="post_metadata">
     <div class="metadata">
+        {{> afQuickField  name="title"}}
         {{> afQuickField  name="description"}}
-        {{> afQuickField  name="tags"}}
+        {{> afFieldInput  name="tags" placeholder="Comma separated tags"}}
     </div>
 
     <div class="post-preview"> 
-      {{> afQuickField  name="title"}}
       {{> video media.[0]}}
     </div>
   </div>

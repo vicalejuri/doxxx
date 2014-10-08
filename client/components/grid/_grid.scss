@@ -19,9 +19,6 @@ $grid-item-height: 14em;
     width: 100%;
     overflow: hidden;
     float: left;
-    padding: 2em;
-    border-right: $grid-item-border;
-    border-bottom: $grid-item-border;
     cursor: pointer;
 
     @include media($large-screen) {

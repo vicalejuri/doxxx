@@ -41,6 +41,7 @@ Models.Post.clone = (embed_data) ->
     _cloned = _.extend( {   channel:     Meteor.settings.public.channels.default},
                         _.pick(embed_data, 'type','url','title','description'),
                         {
+                            tags:    ['alo','teta']
                             authors: [   _.pick(embed_data, 'author_name','author_url') , ],
                             images:  [   _.pick(embed_data, 'thumbnail_url','thumbnail_width','thumbnail_height') , ] ,
                             media:   [   _.pick(embed_data, 'html', 'width','height','url') , ]  

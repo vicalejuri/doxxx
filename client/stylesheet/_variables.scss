@@ -1,18 +1,17 @@
 // Typography
-$helvetica:  'Terminal Dosis', 'Oswald', 'Helvetica Neue', serif;
+$helvetica:  'Oswald', 'Helvetica Neue', serif;
 $sans-serif: 'Open Sans', sans-serif;
 $serif:      'Roboto Slab', serif;
 $monospace:   Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 
-$base-font-family: $sans-serif;
+$base-font-family: $monospace;
 $base-font-weight: 100;
-$base-font-size: 14px;
 
 $header-font-family: $helvetica;
 $header-font-weight: 700;
 
 // Sizes
-$base-font-size: 1em;
+$base-font-size: 1.2em;
 $base-line-height: $base-font-size * 1.5;
 $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
 $header-line-height: $base-font-size * 1.25;

@@ -19,6 +19,7 @@ $navigation-search-border: 1px solid darken($navigation-background, 5);
 $navigation-active-link-color: transparentize(white, 0.5);
 $navigation-submenu-padding: 1em;
 
+
 header.navigation {
 
   background-color: $navigation-background;
@@ -69,11 +70,23 @@ header.navigation {
     display: inline-block;
   }
 
-  .upload-dialog-btn {
+  .right-menu {
     float: right;
-    display: inline;
+    display: flex;
 
-    @include square-button($navigation-nav-button-background);
+    &:only-child {
+        float: right;
+    }
+
+    .upload-dialog-btn {
+        @include square-button($navigation-nav-button-background);
+    }
+
+    #login-buttons {
+        @include square-button($navigation-nav-button-background);
+        line-height: 1.5;
+    }
+
   }
 
 }

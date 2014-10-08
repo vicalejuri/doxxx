@@ -63,6 +63,11 @@ Schemas.Post = new SimpleSchema
             rows: 5 
         }
 
+    tags:
+        type: [String]
+        label: "Comma separated tags",
+        optional: true
+
     authors:
         type: [Object]
         label: "Authors"

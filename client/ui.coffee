@@ -19,4 +19,3 @@ UI.registerHelper 'is_debugger_enabled', ->
 UI.registerHelper 'posts', (channel) ->
   return Models.Post.find({channel: channel})
 
-

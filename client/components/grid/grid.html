@@ -27,8 +27,8 @@
 
 <template name="videofeed">
   {{#gridWrapper}}
-    {{# each post }}
-      {{> gridItem item=this}}
+    {{# each posts }}
+      {{> gridItem this}}
     {{/each}}
   {{/gridWrapper}}
 </template>

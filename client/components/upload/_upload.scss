@@ -2,18 +2,31 @@
     @include outer-container;
     max-width: 90%;
 
+    fieldset {
+        background: transparent !important;
+        font-size: 0.8em;
+    }
+
+    h1 {
+      background: url(http://i.giphy.com/KNEuNnTlppwcM.gif) 0px 0px;
+      color: white !important;
+    }
+
     .url-previewer {
-        @include span-columns(12);
-        @include omega();
-    }
-
-    .metadata {
         @include span-columns(6);
     }
 
-    .post-preview {
-        @include span-columns(6);
-        @include omega();
+    .post_metadata {
+
+        .metadata {
+            @include span-columns(6);
+        }
+
+        .post-preview {
+            @include span-columns(6);
+            @include omega();
+        }
+
     }
 
     .submit.btn {
