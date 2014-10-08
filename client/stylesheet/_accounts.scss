@@ -8,6 +8,7 @@ $modal-image-height: 135px;
 $modal-padding: 1em;
 
 .accounts-dialog {
+  top: 30px;
   @include transition(all .25s $ease-out-quad);
   $modal-background: $base-background-color;
   $modal-close-color: $light-gray;
@@ -19,31 +20,46 @@ $modal-padding: 1em;
 }
 
 
-#login-buttons .login-close-text {
-    content: '';
-    @include position(absolute, ($modal-padding /2) ($modal-padding /2) 0 0);
-    @include size(1.5em);
-    z-index: 99999999999;
-    cursor: pointer;
-    background: $modal-background;
+#login-buttons {
 
-    &:after,
-    &:before {
-      @include position(absolute, 3px 3px 0 50%);
-      @include transform(rotate(45deg));
-      @include size(.15em 1.5em);
-      background: $modal-close-color;
-      content: '';
-      display: block;
-      margin: -3px 0 0 -1px;
+    .login-link-and-dropdown-list {
+        border: 0px !important;
+        @include square-button($navigation-nav-button-background);
+        line-height: 1.5;
     }
 
-    &:hover:after,
-    &:hover:before {
-      background: darken($modal-close-color, 10);
-    }
+    .login-close-text {
 
-    &:before {
-      @include transform(rotate(-45deg));
+        content: '';
+        text-indent: -9999px;
+        @include position(absolute, ($modal-padding /2) ($modal-padding /2) 0 0);
+        @include size(1.5em);
+        z-index: 99999999999;
+        cursor: pointer;
+        background: $modal-background;
+
+        &:after,
+        &:before {
+        @include position(absolute, 3px 3px 0 50%);
+        @include transform(rotate(45deg));
+        @include size(.15em 1.5em);
+        background: $modal-close-color;
+        content: '';
+        display: block;
+        margin: -3px 0 0 -1px;
+        }
+
+        &:hover:after,
+        &:hover:before {
+        background: darken($modal-close-color, 10);
+        }
+
+        &:before {
+        @include transform(rotate(-45deg));
+        }
     }
+}
+
+#login-dropdown-list {
+    top: $navigation-height - $navigation-height/3;
 }

@@ -82,7 +82,8 @@ header.navigation {
         @include square-button($navigation-nav-button-background);
     }
 
-    #login-buttons {
+    .login-link-and-dropdown-list {
+        border: 0px !important;
         @include square-button($navigation-nav-button-background);
         line-height: 1.5;
     }
