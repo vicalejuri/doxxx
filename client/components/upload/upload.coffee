@@ -1,6 +1,7 @@
 preview_logger = new AppLog('uploadPreview')
 
 Template.upload.events = _.extend( {
+        #Models.Post.insert( _new_post )
     }, 
     LiveTextInput('input[name="url"]', {
         'ok': (text, ev) ->
@@ -11,22 +12,27 @@ Template.upload.events = _.extend( {
 
 AutoForm.hooks
     PostUploadPreview: 
-        onSubmit: (insertDoc, updateDoc, currentDoc)->
-            console.log("Submiting", insertDoc)
-            Schemas.Post.clean(insertDoc)
-            this.done()
-            false
-
         onSuccess: (op, res, template) ->
             preview_logger.log("Saved post successfully!")
-            $("#modal-upload").prop('checked',false)
+            Modals.close('upload')
+            #$("#modal-upload").prop('checked',false)
+
+        onError: (op, err, tmpl ) ->
+            preview_logger.log("Error --> ", op, err)
+            Modals.close('upload')
 
         docToForm: (doc) ->
             doc.tags = doc.tags.join(", ") if _.isArray(doc.tags)
+            doc.authors = JSON.stringify( doc.authors  ) if _.isObject( doc.authors )
+            doc.images = JSON.stringify( doc.images ) if _.isObject(doc.images)
+            doc.media = JSON.stringify( doc.media ) if _.isObject(doc.media)
             doc
 
         formToDoc: (doc) ->
             doc.tags = doc.tags.split(", ") if _.isString(doc.tags)
+            doc.authors = JSON.parse( doc.authors ) if _.isString(doc.authors)
+            doc.images  = JSON.parse( doc.images ) if _.isString(doc.images)
+            doc.media   = JSON.parse( doc.media ) if _.isString(doc.media)
             doc
 
 

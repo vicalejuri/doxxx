@@ -41,8 +41,10 @@ Schemas.Post = new SimpleSchema
 
     type:
         type: String,
-        label: "Type"
-        allowedValues: ['video','rich','photo','link']
+        label: "Type",
+        allowedValues: ['video','rich','photo','link'],
+        autoValue: (doc) ->
+            "video"
 
     url: 
         type: String,
@@ -67,19 +69,6 @@ Schemas.Post = new SimpleSchema
         type: [String]
         label: "Comma separated tags",
         optional: true
-
-    authors:
-        type: [Object]
-        label: "Authors"
-        optional: false
-
-    "authors.$.author_name":
-        type: String,
-        optional: false
-
-    "authors.$.author_url":
-        type: String
-        optional: false
 
     keywords:
         type: [Object]
@@ -122,4 +111,35 @@ Schemas.Post = new SimpleSchema
 
     "media.$.height":
         type: String,
+        optional: true
+
+
+Schemas.UploadPost = new SimpleSchema
+    channel:
+        type:  String,
+        label: "Channel",
+        index: true
+
+    url: 
+        type: String,
+        regEx: SimpleSchema.RegEx.Url,
+        label: "URL"
+        index: true
+
+    title:
+        type: String,
+        label: "Title"
+        index: true
+
+    description:
+        type: String,
+        label: "Description",
+        optional: true
+        autoform: {
+            rows: 5 
+        }
+
+    tags:
+        type: [String]
+        label: "Comma separated tags",
         optional: true

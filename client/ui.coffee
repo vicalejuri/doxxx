@@ -14,7 +14,6 @@ UI.registerHelper 'is_debugger_enabled', ->
     return true
 
 
-
 # Return the feed of posts of the given channel
 UI.registerHelper 'posts', (channel) ->
   return Models.Post.find({channel: channel})

@@ -22,6 +22,7 @@
         changed:   'layout.changed'
 
 @SessEnum =
+    page:                 'frontpage'
     channels:
         selected:         'channels.selected'            # Name of selected channel
         object:           'channels.selected_object'     # Selected Channel Object
@@ -31,4 +32,4 @@
             preview_url:    'post.preview_url'               # Submit Preview URL
             preview_post:   'post.preview_post'              # Submit preview (video)
 
-        current:        'post.current'                   # Currently watching video
+        watching:        'post.watching'                   # Currently watching video

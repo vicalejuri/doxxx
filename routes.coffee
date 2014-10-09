@@ -3,13 +3,23 @@ Router.configure
     notFoundTemplate:   'notfound'
 
 Router.onBeforeAction 'loading'
-
 Router.map ->
     this.route 'home', 
         path: '/', layoutTemplate: 'page'
         template: 'videofeed'
         yieldTemplates:
             header:   {to: 'header'}
+
+    this.route 'post.watch',
+        path: '/w/:_id', layoutTemplate: 'page'
+        template: 'post_watch'
+        data: ->
+            return Models.Post.findOne({_id: this.params._id})
+
+        yieldTemplates:
+            header: {to: 'header'}
+        onRun: ->
+            Session.set( SessEnum.post.watching , this.params._id )
 
     this.route 'channel',
         path: '/r/:channel_slug', layoutTemplate: 'page'

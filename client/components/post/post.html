@@ -1,0 +1,20 @@
+<!-- Watch a single post -->
+<template name="post_watch">
+  <div class="hero-unit post_watch">
+      <hr>
+
+      <div class="video-container">
+        {{> video media.[0]}}
+      </div>
+  </div>
+  <div class="metadata-info">
+    <p>{{title}}</p>
+    <p>{{description}}</p>
+    <p>{{tags}}</p>
+
+    <div class="rating"></div>
+  </div>
+  <div class="comments">
+  </div>
+</template>
+

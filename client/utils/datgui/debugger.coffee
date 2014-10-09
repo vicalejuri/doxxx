@@ -10,11 +10,11 @@ Template.session_debug.rendered = ->
     channels.add( session_obj , 'channels.selected_object' )
 
     posts = gui.addFolder( 'Post' )
-    posts.add( session_obj , 'post.current' )
+    posts.add( session_obj , 'post.watching' )
     posts.add( session_obj , 'post.preview_url' )
     posts.add( session_obj , 'post.preview_post' )
 
-    channels.open()
+    #channels.open()
     $('.debug-pane').append( gui.domElement )
 
 UI.registerHelper 'log', (data, ctx) -> 
