@@ -1,37 +1,20 @@
-.upload {
-    @include outer-container;
-    max-width: 90%;
-
-    fieldset {
-        background: transparent !important;
-        font-size: 0.8em;
+.post_watch {
+    .hero-unit {
+        padding: 2% 0% 2% 0%;
+        border-bottom:  1px solid $light-gray;
     }
 
-    h1 {
-      background: url(http://i.giphy.com/KNEuNnTlppwcM.gif) 350px -60px;
-      color: #33c5f3 !important;
-    }
+    .info {
+        text-align: left;
 
-    .url-previewer {
-        @include span-columns(6);
-    }
-
-    .post_metadata {
-
-        .metadata {
-            @include span-columns(6);
+        .title , .description , .tags , .rating {
+            color: #f00;
         }
-
-        .post-preview {
-            @include span-columns(6);
-            @include omega();
-        }
-
     }
 
-    .submit.btn {
-      @include square-button($pink);
-      float: right;
-      width: 100%;
+    .metadata {
+        .comments {
+            color: #f00;
+        }
     }
 }
