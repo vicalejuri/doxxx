@@ -9,6 +9,7 @@ Router.map ->
         template: 'videofeed'
         yieldTemplates:
             header:   {to: 'header'}
+            footer: {to: 'footer'}
 
     this.route 'post.watch',
         path: '/w/:_id', layoutTemplate: 'page'
@@ -18,6 +19,7 @@ Router.map ->
 
         yieldTemplates:
             header: {to: 'header'}
+            footer: {to: 'footer'}
         onRun: ->
             Session.set( SessEnum.post.watching , this.params._id )
 
@@ -28,6 +30,7 @@ Router.map ->
             Session.set( SessEnum.channels.selected, this.params.channel_slug )
         yieldTemplates:
             header: {to: 'header'}
+            footer: {to: 'footer'}
         onRun: ->
             AppLog.log('router:channel', this.params )
             Session.set( SessEnum.channels.selected , this.params.channel_slug )

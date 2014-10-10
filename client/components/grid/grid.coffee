@@ -3,4 +3,5 @@ Template.videofeed.posts = ->
 
 Template.gridItem.events =
     'click .grid-item': ( ev, tmpl ) ->
-        Router.go('post_watch', {_id: tmpl.data._id})
+        #Router.go('post_watch', {_id: tmpl.data._id})
+

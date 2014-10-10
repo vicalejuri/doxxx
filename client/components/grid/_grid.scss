@@ -1,25 +1,33 @@
-$grid-item-background: lighten( $base-background-color , 15 );
+$grid-item-background: transparent;
 $grid-item-border: 1px solid lighten($base-font-color, .30);
-$grid-item-columns: 4;
+$grid-item-columns: 3;
 $grid-item-big-columns: 8;
 $grid-item-color: $base-font-color;
-$grid-item-height: 14em;
+$grid-item-height: 211px;
 
 .grid-wrapper {
   @include clearfix;
   position: relative;
 
+  a {
+    text-decoration: none;
+    border-bottom: 0px;
+  }
+
   .grid-item {
 
     @include transition (all 0.2s ease-in-out);
     @include span-columns($grid-item-columns);
+    @include omega(4n);
 
     height: $grid-item-height;
     background: $grid-item-background;
     width: 100%;
     overflow: hidden;
+    position: relative;
     float: left;
     cursor: pointer;
+    margin-bottom: 1em;
 
     @include media($large-screen) {
       @include span-columns($grid-item-columns);
@@ -29,23 +37,45 @@ $grid-item-height: 14em;
       background: transparentize($grid-item-color, .95);
     }
 
-  }
 
-  .grid-item .placeholder {
-    background-color: #f00;
-    height: 8em;
-  }
+    .front {
+        text-align: left;
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        height: 50%;
+        padding: 1em;
 
-  .grid-item h1 {
-    color: $grid-item-color;
-    font-size: 1.3em;
-    margin-bottom: .4em;
-  }
+        .title {
+            color: $grid-item-color;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px #000;
+            font-size: 1.8em;
+            font-weight: 300;
+            overflow: hidden;
+        }
 
-  .grid-item p {
-    color: transparentize($grid-item-color, .4);
-    @include media($medium-screen) {
-      max-width: 70%;
+        p {
+            color: transparentize($grid-item-color, .4);
+
+            @include media($medium-screen);
+            max-width: 70%;
+        }
+    }
+
+
+    .back {
+        position: relative;
+        height: $grid-item-height;
+        overflow: hidden;
+        border: 1px solid #f00;
+
+        img {
+            position: absolute;
+            top: -90px;
+            left: -120px;
+        }
     }
   }
 

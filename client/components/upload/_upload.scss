@@ -1,15 +1,17 @@
 .upload {
     @include outer-container;
+    min-width: 40%;
     max-width: 90%;
+    width: auto;
 
     fieldset {
         background: transparent !important;
-        font-size: 0.8em;
+        font-size: 1.0em;
     }
 
     h1 {
       background: url(http://i.giphy.com/KNEuNnTlppwcM.gif) 350px -60px;
-      color: #33c5f3 !important;
+      color: #fff!important;
     }
 
     .url-previewer {
@@ -29,9 +31,13 @@
 
     }
 
-    .submit.btn {
-      @include square-button($pink);
-      float: right;
-      width: 100%;
+    .send-buttons {
+        @include span-columns(4);
+        @include shift(4);
+
+        .submit.btn {
+            @include square-button( #5333B0 );
+            width: 50%;
+        }
     }
 }

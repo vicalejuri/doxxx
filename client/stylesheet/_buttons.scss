@@ -1,17 +1,15 @@
 @mixin square-button ( $bt_color ) {
     cursor: pointer;
-    @include transition (all 0.25s $ease-in-out-circ);
-    background: $bt_color;
+    @include transition (all 0.25s $ease-out-circ);
+    background: lighten($bt_color, 10);
     color: white;
     font-size: 1em;
     font-weight: 800;
     text-transform: uppercase;
     padding: .5em .5em;
 
-    border: 2px solid transparent;
-
     &:hover {
-      background: lighten($bt_color, 10);
-      border: 2px solid white;
+      background: $pink;
+      color: #fff;
     }
 }

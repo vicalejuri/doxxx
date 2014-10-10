@@ -13,8 +13,11 @@
     }
 
     .metadata {
+        @include span-columns(12);
+        @include omega();
+
         .comments {
-            color: #f00;
+            margin-top: 60px;
         }
     }
 }

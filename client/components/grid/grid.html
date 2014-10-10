@@ -1,5 +1,5 @@
 <template name="gridWrapper">
-  <div class="grid-wrapper">
+<div class="grid-wrapper {{class}}">
     {{> UI.contentBlock}}
   </div>
 </template>
@@ -7,26 +7,19 @@
 
 <template name="gridItem">
     <a href="/w/{{_id}}" class="grid-item">
-      <div class="grid-item-holder">
-        <div class="front">
-          <div class="placeholder">
-            <img src="{{ images.[0].thumbnail_url }}">
-          </div>
-        </div>
         <div class="back">
-          <div class="back-content">
-            <div class="back-content-holder">
-              <h1>{{ title }}</h1>
-            </div>
-          </div>
+            <img src="{{ images.[0].thumbnail_url }}">
         </div>
-      </div>
+        <div class="front">
+          <h1 class="title">{{ title }}</h1>
+          <h2 class="author">{{ author }}</h2>
+        </div>
     </a>
 </template>
 
 
 <template name="videofeed">
-  {{#gridWrapper}}
+  {{#gridWrapper class="videofeed"}}
     {{# each posts }}
       {{> gridItem this}}
     {{/each}}

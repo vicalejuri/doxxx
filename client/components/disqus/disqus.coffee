@@ -4,15 +4,14 @@ disqusCommentsLogger = new AppLog('disqusCommentsLogger')
 @disqus_title       = undefined
 @disqus_url         = undefined
 @disqus_identifier  = undefined
-@dsq                = undefined
 Template.disqus_comments.created = ->
-    return if dsq
+    return if DISQUS?
 
     disqus_title = this.data.title ? undefined
     disqus_url   = this.data.url ? undefined
     disqus_identifier = this.data._id ? undefined
 
-    console.log disqus_title , disqus_url, disqus_identifier, disqus_shortname
+    disqusCommentsLogger.log("Embedding DISQUS for the first time...")
 
     dsq = document.createElement('script')
     dsq.type = 'text/javascript'
@@ -24,6 +23,8 @@ Template.disqus_comments.created = ->
 
 Template.disqus_comments.rendered = ->
     return if not DISQUS?
+
+    disqusCommentsLogger.log("DISQUS re-rendering...")
     tmpl_data = this.data
 
     DISQUS.reset({
