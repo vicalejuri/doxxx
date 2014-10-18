@@ -1,0 +1,21 @@
+- Botao de upload a direita (flutuando)
+
+UPLOAD
+  - Botao de OK c/ url.
+  - Mostrar Titulo, Descricao e Preview  
+  - Salvar no DB.
+
+- Corrigir max-width de @outer-container pra >= desktop
+- Modal deve adequar-se ao tamanho , centralizado.
+
++ Centralizar layout de upload que ta muito feio.
++ Adicionar botao/hover de play, upvote/downvote no grid-item:hover
+
+layout mobile
+    + Grid-item p/ layout < 960 ou 1066 deve extender background ate o final (width) da linha.
+    + Adicionar botao/hover de play, upvote/downvote no grid-item:hover
+
++ Corrigir botoes de sign-in. Fazer no click ir para pagina especial de login.
++ Adicionar margin entre botoes-right no header
+
++ Fazer com que footer/container/disqus funcionem juntos.

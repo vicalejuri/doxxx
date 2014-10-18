@@ -29,7 +29,8 @@ $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 $pink: #E5297B;
 $light-pink: #D733DD;
-
+$green: darken($light-green, 30);
+$red: darken($light-red, 30);
 
 // Background Color
 $base-background-color: black;

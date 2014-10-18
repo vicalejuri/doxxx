@@ -10,6 +10,8 @@ Router.map ->
         yieldTemplates:
             header:   {to: 'header'}
             footer: {to: 'footer'}
+        onRun: ->
+            Session.set( SessEnum.post.watching , undefined )
 
     this.route 'post.watch',
         path: '/w/:_id', layoutTemplate: 'page'
@@ -21,7 +23,8 @@ Router.map ->
             header: {to: 'header'}
             footer: {to: 'footer'}
         onRun: ->
-            Session.set( SessEnum.post.watching , this.params._id )
+            post = Models.Post.findOne({_id: this.params._id})
+            Session.set( SessEnum.post.watching , post )
 
     this.route 'channel',
         path: '/r/:channel_slug', layoutTemplate: 'page'

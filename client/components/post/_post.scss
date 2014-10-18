@@ -1,12 +1,38 @@
 .post_watch {
+    text-align: left;
+
+    .masthead {
+        text-align: left;
+
+        @include row();
+
+        h1 {
+            @include span-columns(10);
+        }
+
+        .action-buttons {
+            @include span-columns(2);
+
+            .up {
+                @include square-button( $green );
+            }
+
+            .down {
+                @include square-button( $red );
+            }
+
+            .save {
+                @include square-button( $pink );
+            }
+        }
+    }
+
     .hero-unit {
         padding: 2% 0% 2% 0%;
         border-bottom:  1px solid $light-gray;
     }
 
     .info {
-        text-align: left;
-
         .title , .description , .tags , .rating {
             color: #f00;
         }

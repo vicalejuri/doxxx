@@ -9,7 +9,7 @@
     padding: .5em .5em;
 
     &:hover {
-      background: $pink;
-      color: #fff;
+      background: darken($bt_color, 30);
+      color: invert($bt_color);
     }
 }

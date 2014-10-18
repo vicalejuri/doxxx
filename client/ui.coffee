@@ -7,6 +7,9 @@ UI.registerHelper 'has_preview', ->
 UI.registerHelper 'preview_post', ->
     return Session.get( SessEnum.post.upload.preview_post )
 
+UI.registerHelper 'page_title', ->
+    return Session.get( SessEnum.post.watching )?.title ? 'DOXX'
+
 UI.registerHelper 'is_admin', ->
     return true
 
