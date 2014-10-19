@@ -1,7 +1,7 @@
 {
     "DEBUG": true,
     "file_server": {
-        "enabled":          true ,
+        "enabled":          false,
         "enable_dirTree":   true,
         "disk_path":  "/Users/frangossauro/VJ",
         "public_path": "/assets"

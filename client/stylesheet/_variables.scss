@@ -1,8 +1,7 @@
 // Typography
 $helvetica:  'Oswald', 'Helvetica Neue', serif;
-$helvetica:  'Lato','HelveticaCondensed', Helvetica, Arial, 'Lucida Grande';
-$sans-serif: 'Open Sans', sans-serif;
-$serif:      'Roboto Slab', serif;
+$sans-serif: 'Questrial', sans-serif;
+$serif: 'Sanchez', serif;
 $monospace:   Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 
 $base-font-family: $sans-serif;
@@ -46,7 +45,7 @@ $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 
 // Border color
-$base-border-color: rgba(0, 255, 216, 0.47);
+$base-border-color: $light-green;
 
 // Flash Colors
 $alert-color: $light-yellow;
@@ -66,6 +65,10 @@ $form-font-family: $base-font-family;
 
 
 // Enable visual-grid (edebugging)
-$visual-grid: true;
+$medium-screen: em(640);
+$large-screen: em(1088);
 
-$large-screen: em(1066);
+$medium-screen-up: new-breakpoint(min-width $medium-screen 4 );
+$large-screen-up: new-breakpoint(min-width $large-screen 8 );
+
+$max-width: 100%;

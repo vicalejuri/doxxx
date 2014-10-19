@@ -1,7 +1,6 @@
 preview_logger = new AppLog('uploadPreview')
 
 Template.upload.events = _.extend( {
-        #Models.Post.insert( _new_post )
     }, 
     LiveTextInput('input[name="url"]', {
         'ok': (text, ev) ->

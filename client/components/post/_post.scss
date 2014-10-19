@@ -3,33 +3,43 @@
 
     .masthead {
         text-align: left;
-
         @include row();
+        overflow: hidden;
+        margin-bottom: 30px;
 
         h1 {
-            @include span-columns(10);
+            @include span-columns(8);
+            text-transform: uppercase;
+            font-size: 3em;
+            text-overflow: ellipsis;
+            line-height: 1.0em;
         }
 
         .action-buttons {
-            @include span-columns(2);
+            float: right;
 
-            .up {
-                @include square-button( $green );
+            a {
+                @include inline-block;
             }
 
-            .down {
-                @include square-button( $red );
+            .upvote {
+                @include square-button($blue);
             }
 
-            .save {
-                @include square-button( $pink );
+            .downvote {
+                @include square-button($red);
             }
         }
+
+
     }
 
     .hero-unit {
         padding: 2% 0% 2% 0%;
-        border-bottom:  1px solid $light-gray;
+        background: $base-background-color;
+
+        border-top:  3px dashed $light-gray;
+        border-bottom:  3px dashed $light-gray;
     }
 
     .info {
@@ -42,8 +52,11 @@
         @include span-columns(12);
         @include omega();
 
+        @include fill-parent;
+
         .comments {
             margin-top: 60px;
+            @include fill-parent;
         }
     }
 }

@@ -70,6 +70,15 @@ header.navigation {
     display: inline-block;
   }
 
+  .header-title {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1em;
+    font-size: 3em;
+  }
+
   .right-menu {
     float: right;
     display: flex;
@@ -89,5 +98,7 @@ header.navigation {
     }
 
   }
+
+
 
 }

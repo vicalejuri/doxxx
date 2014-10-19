@@ -1,9 +1,10 @@
+@import "client/stylesheet/_variables.scss";
+
 @import "packages/bourbon/bourbon";
 @import "packages/neat/neat";
 
-@import "client/stylesheet/_variables.scss";
+/*@import "client/stylesheet/_variables.scss";*/
 @import "packages/bitters/base/base";
-
 
 @import "packages/bbfc:refills/refills/video.scss";
 @import "packages/bbfc:refills/refills/modal.scss";
@@ -20,9 +21,13 @@ body {
     @include transition( padding-top 0.3s cubic-bezier( 0, 0.69, 0.42, 1 ) );
     -webkit-font-smoothing: antialiased;
     background: url(/images/congruent_outline.png) repeat;
+
+    @include media($large-screen){
+        $max-width: 90%;
+    }
 }
 
-::selection {
+*::selection {
     background: $pink;
 }
 
@@ -75,6 +80,7 @@ a {
 
 .container[role="main"] {
     @include outer-container;
+    @include  fill-parent();
 
     width: 100%;
     text-align: center;
@@ -82,8 +88,7 @@ a {
     height: 100%;
 
     padding: 1em;
-
-    background-color: lighten( $base-background-color, 30 );
+    background-color: rgba(  lighten( $base-background-color , 10) , 0.8 );
 }
 
 
