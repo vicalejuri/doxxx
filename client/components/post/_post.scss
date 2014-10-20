@@ -1,6 +1,9 @@
 .post_watch {
     text-align: left;
 
+      //    /__/\   __ /__/\   __  /__/\     /__/\
+      //    \__\/ /__/\\__\/ /__/\ \__\/     \__\/      ------- >>>>>>
+      //          \__\/ \__\/\__\/
     .masthead {
         text-align: left;
         @include row();
@@ -30,13 +33,13 @@
                 @include square-button($red);
             }
         }
-
-
     }
 
+    /*
+     * Video Player
+     */
     .hero-unit {
-        padding: 2% 0% 2% 0%;
-        background: $base-background-color;
+        margin: 2% 0% 2% 0%;
 
         border-top:  3px dashed $light-gray;
         border-bottom:  3px dashed $light-gray;
@@ -48,6 +51,10 @@
         }
     }
 
+
+    /*
+     * Comments and so on
+     */
     .metadata {
         @include span-columns(12);
         @include omega();

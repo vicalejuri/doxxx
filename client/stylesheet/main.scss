@@ -20,10 +20,35 @@ body {
 
     @include transition( padding-top 0.3s cubic-bezier( 0, 0.69, 0.42, 1 ) );
     -webkit-font-smoothing: antialiased;
-    background: url(/images/congruent_outline.png) repeat;
 
     @include media($large-screen){
         $max-width: 90%;
+    }
+
+}
+
+.bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #000;
+    background: url(/images/bg-photshop2.png) repeat;
+
+    z-index: -1;
+
+    .gradient {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+
+        @include radial-gradient(ellipse at center, rgba(0,0,0,0.51) 0%, #000 100%);
     }
 }
 
@@ -85,12 +110,10 @@ a {
     width: 100%;
     text-align: center;
     margin-top: $navigation-height + 20;
-    height: 100%;
 
     padding: 1em;
     background-color: rgba(  lighten( $base-background-color , 10) , 0.8 );
 }
-
 
 
 @import "client/components/grid/_grid";

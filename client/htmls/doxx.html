@@ -10,16 +10,17 @@
 
 </head>
 
-
-
 <template name="page">
+    <div class="bg">
+        <div id="name" class="gradient"></div>
+    </div>
+
     {{> yield region="header"}}
     <div class="container" role="main">
         {{> yield}}
     </div>
 
     {{> modal_upload}}
-
     {{> yield region="footer"}}
 </template>
 
@@ -57,8 +58,5 @@
         {{/if}}
     </footer>
 </template>
-
-
-
 
 
