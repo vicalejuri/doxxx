@@ -21,6 +21,26 @@ Template.disqus_comments.created = ->
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
 
 
+# ---
+# lets avoid broken layouts
+# Update disquss comments size based on the qtd of comments.
+#   Yes. 
+# -*-
+@disqus_config = ->
+    this.callbacks = 
+        onReady: [->
+            setTimeout( ->
+                frameHeight = $('#disqus_thread > iframe').height()
+                $('#disqus_thread').height(frameHeight)
+            , 300 )]
+        onNewComment: [ ->
+            frameHeight = $('#disqus_thread > iframe').height()
+            $('#disqus_thread').height(frameHeight)
+       ]
+
+@disqus_config
+
+
 Template.disqus_comments.rendered = ->
     return if not DISQUS?
 

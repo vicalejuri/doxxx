@@ -56,14 +56,13 @@
      * Comments and so on
      */
     .metadata {
-        @include span-columns(12);
-        @include omega();
-
-        @include fill-parent;
+        clear: both;
+        height: 100%;
 
         .comments {
             margin-top: 60px;
-            @include fill-parent;
         }
     }
+
+    clear: both;
 }

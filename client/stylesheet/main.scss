@@ -113,6 +113,10 @@ a {
 
     padding: 1em;
     background-color: rgba(  lighten( $base-background-color , 10) , 0.8 );
+
+    clear: both;
+
+    @include transition( all 0.3s cubic-bezier( 0, 0.69, 0.42, 1 ) );
 }
 
 
@@ -131,7 +135,7 @@ a {
 
  */
 .footer {
-    @include outer-container;
+    @include outer-container();
 
     border-top: 1px solid $light-gray;
     margin-top: 60px;
