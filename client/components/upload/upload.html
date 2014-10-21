@@ -16,10 +16,11 @@
   <div class="upload">
       <h1>UPload video</h1>
 
-    {{#autoForm id="PostUploadPreview" type="insert" collection="Models.Post" doc=preview_post }}
+    {{#autoForm id="PostUploadPreview" type="insert" collection="Models.Posts" doc=preview_post }}
       <fieldset>
             <div class="url-previewer">
-            {{> afQuickField  name="url"}}
+                {{> afQuickField  name="url" class="url"}}
+                {{> afFieldInput  name="channels" class="channels" placeholder="Channels (Comma separated)"}}
             </div>
 
             {{#if preview_post}}

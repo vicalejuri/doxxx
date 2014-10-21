@@ -17,13 +17,13 @@ Router.map ->
         path: '/w/:_id', layoutTemplate: 'page'
         template: 'post_watch'
         data: ->
-            return Models.Post.findOne({_id: this.params._id})
+            return Models.Posts.findOne({_id: this.params._id})
 
         yieldTemplates:
             header: {to: 'header'}
             footer: {to: 'footer'}
         onRun: ->
-            post = Models.Post.findOne({_id: this.params._id})
+            post = Models.Posts.findOne({_id: this.params._id})
             Session.set( SessEnum.post.watching , post )
 
     this.route 'channel',

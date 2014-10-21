@@ -15,7 +15,13 @@
     }
 
     .url-previewer {
-        @include span-columns(6);
+        .url {
+            @include span-columns(6);
+        }
+        .channels {
+            @include span-columns(6);
+            @include omega();
+        }
     }
 
     .post_metadata {

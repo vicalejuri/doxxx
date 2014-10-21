@@ -18,8 +18,8 @@ AutoForm.hooks
 
         onError: (op, err, tmpl ) ->
             preview_logger.log("Error --> ", op, err)
-            Modals.close('upload')
-            Router.go('home')
+            #Modals.close('upload')
+            #Router.go('home')
 
         docToForm: (doc) ->
             doc.tags = doc.tags.join(", ") if _.isArray(doc.tags)
@@ -45,7 +45,7 @@ preview_url_autorun = ->
     return if not preview_url?
 
     # Try to get more info, dispatch preview_post
-    Models.Post.previewURL preview_url , (err, preview_post ) ->
+    Models.Posts.previewURL preview_url , (err, preview_post ) ->
 
         # TODO: Show error msg to User
         return if(err)

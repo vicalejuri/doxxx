@@ -1,16 +1,22 @@
-Meteor.publish 'active_channels', (_query) ->
-  channel = Session.get(SessEnum.channels.selected)
-  qr = _query ? {} 
-  return Models.Channel.find( {_id: {$in: [channels]}) 
+# We always have one active channel (default)
+Meteor.publish 'active_channels',  ->
+  channels = Session.get(SessEnum.channels.selected)
+  return Models.Channels.find( {_id: {$in: channels}}) 
 
-Meteor.publish 'posts', (channels) ->
+Meteor.publish 'all_channels', ->
+  return Models.Channels.find()
+
+# Get posts from the given (one or many channels)
+Meteor.publish 'posts_from_channel', (channels) ->
   # Subscribe to post on channel array (many or one)
   channels = [channels,] if Match.test(channels,String)
   check(channel, Array )
 
-  Models.Post.find({channels: { $in: channels }})
+  Models.Posts.find({channels: { $in: channels }})
 
+# Get posts from the collection of User subscribed channels
 Meteor.publish 'userfeed_posts' , ->
   # Subscribe to Userfeed (subscribed channels) 
   channels = [ Meteor.settings.public.channels.default ] # , Settings. Meteor.user.profile.subscribed_channels ]
-  Models.Post.find({channels: { $in: channels }})
+  Models.Posts.find({channels: { $in: channels }})
+

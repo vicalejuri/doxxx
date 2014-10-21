@@ -32,6 +32,10 @@ Schemas.Channel = new SimpleSchema
 Schemas.Post = new SimpleSchema
     createdAt: SchemasField.createdAt
     updatedAt: SchemasField.updatedAt
+    owner:     
+        type:   String
+        autoValue: (doc) ->
+            return Meteor.userId()
 
     channels:
         type:  [String],
@@ -114,8 +118,8 @@ Schemas.Post = new SimpleSchema
 
 
 Schemas.UploadPost = new SimpleSchema
-    channel:
-        type:  String,
+    channels:
+        type:  [String],
         label: "Channel",
         index: true
 

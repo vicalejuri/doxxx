@@ -77,6 +77,11 @@ header.navigation {
     display: inline-block;
     line-height: 1em;
     font-size: 3em;
+
+    max-width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .right-menu {

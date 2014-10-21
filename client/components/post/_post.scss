@@ -6,20 +6,27 @@
       //          \__\/ \__\/\__\/
     .masthead {
         text-align: left;
-        @include row();
         overflow: hidden;
         margin-bottom: 30px;
 
         h1 {
-            @include span-columns(8);
+            @include span-columns(10);
+            @include omega();
             text-transform: uppercase;
             font-size: 3em;
-            text-overflow: ellipsis;
             line-height: 1.0em;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
+        /*
+         * Upvote/etc buttons
+         */
         .action-buttons {
             float: right;
+            @include omega();
 
             a {
                 @include inline-block;
