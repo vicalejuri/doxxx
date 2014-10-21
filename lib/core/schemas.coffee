@@ -25,17 +25,16 @@ Schemas.Channel = new SimpleSchema
 
     summary:
         type:   String,
-        label:  "Summary",
+        label:  "All POSTS",
         optional: true
-
 
 
 Schemas.Post = new SimpleSchema
     createdAt: SchemasField.createdAt
     updatedAt: SchemasField.updatedAt
 
-    channel:
-        type:  String,
+    channels:
+        type:  [String],
         label: "Channel",
         index: true
 

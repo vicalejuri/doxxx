@@ -27,6 +27,8 @@
         selected:         'channels.selected'            # Name of selected channel
         object:           'channels.selected_object'     # Selected Channel Object
 
+        subscribed:       'channels.subscribed'          # Subscribed channel (per-user)
+
     post:
         upload:
             preview_url:    'post.preview_url'               # Submit Preview URL

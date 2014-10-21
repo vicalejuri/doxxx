@@ -5,16 +5,21 @@ Template.session_debug.rendered = ->
 
     session_obj = Session.keys
 
-    channels = gui.addFolder( 'Channels' )
-    channels.add( session_obj , 'channels.selected' )
-    channels.add( session_obj , 'channels.selected_object' )
+    try
+        channels = gui.addFolder( 'Channels' )
+        channels.add( session_obj , 'channels.selected' )
+        channels.add( session_obj , 'channels.selected_object' )
+    catch
+        0
 
-    posts = gui.addFolder( 'Post' )
-    posts.add( session_obj , 'post.watching' )
-    posts.add( session_obj , 'post.preview_url' )
-    posts.add( session_obj , 'post.preview_post' )
+    try
+        posts = gui.addFolder( 'Post' )
+        posts.add( session_obj , 'post.watching' )
+        posts.add( session_obj , 'post.preview_url' )
+        posts.add( session_obj , 'post.preview_post' )
+    catch
+        0
 
-    #channels.open()
     $('.debug-pane').append( gui.domElement )
 
 UI.registerHelper 'log', (data, ctx) -> 

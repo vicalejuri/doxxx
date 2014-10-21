@@ -4,9 +4,9 @@ Meteor.startup ->
   Deps.autorun ->
     channel = Session.get( SessEnum.channels.selected )
     if channel?
-      post_subscribe = Meteor.subscribe 'post', channel
+      post_subscribe = Meteor.subscribe 'posts', channel
     else
-      post_subcribe = null
+      post_subcribe = Meteor.subscribe  'userfeed_posts'
 
 
 
@@ -15,6 +15,5 @@ Meteor.startup ->
 Meteor.startup ->
   Deps.autorun ->
     channel_name = Session.get( SessEnum.channels.selected )
-    channel_subscribe = Meteor.subscribe 'channel', ->
-      channel = Models.Channel.findOne( {name: channel_name} )
-      Session.set( SessEnum.channel.object , channel )
+    channel_subscribe = Meteor.subscribe 'channels', ->
+      channel = Models.Channel.find( {slug: channel_name} )
