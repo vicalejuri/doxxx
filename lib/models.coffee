@@ -21,7 +21,7 @@ Models.Posts.attachSchema( Schemas.Post )
     
     Asynchronous, pass a cb please.
 ###
-Models.Posts.previewURL = (url, cb) ->
+Models.Posts.fetchURL = (url, cb) ->
     _info = Meteor.call 'getURLInfo', url, 
         (err, res) =>
             if err?

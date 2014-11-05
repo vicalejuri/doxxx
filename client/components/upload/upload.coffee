@@ -3,7 +3,7 @@ preview_logger = new AppLog('uploadPreview')
 Template.upload.events = _.extend( {
     }, 
     LiveTextInput('input[name="url"]', {
-        'ok': (text, ev) ->
+        'ok': (text, ev) -> 
             Session.set( SessEnum.post.upload.preview_url, text )
             Deps.flush()
     })
@@ -45,7 +45,7 @@ preview_url_autorun = ->
     return if not preview_url?
 
     # Try to get more info, dispatch preview_post
-    Models.Posts.previewURL preview_url , (err, preview_post ) ->
+    Models.Posts.fetchURL preview_url , (err, preview_post ) ->
 
         # TODO: Show error msg to User
         return if(err)

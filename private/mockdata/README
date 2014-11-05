@@ -19,16 +19,14 @@ Filter it (if you need):
 
 And now mass-import the content
 
-    add_new_post = ( new_post )
+    add_new_post = ( new_post ) ->
+        Models.Post.insert( new_post )
 
     Assets.getText 'mockdata/doxxx.json', (mockdata) ->
         doxxx_json = EJSON.parse(mockdata)
 
         for c_post in doxxx_json
-            add_new_post: (new_post) ->
-                Models.Post.insert( new_post )
-
             if c_post.link?
-                Models.Post.previewURL(  c_post.link , add_new_post ) 
+                Models.Post.fetchURL(  c_post.link , add_new_post ) 
             else
                 console.log("Skipping post ", c_post.name )
