@@ -1,13 +1,13 @@
 @import "client/stylesheet/_variables.scss";
 
-@import "packages/bourbon/bourbon";
-@import "packages/neat/neat";
+@import "client/libs/bourbon/_bourbon.scss";
+@import "client/libs/neat/_neat.scss";
 
-/*@import "client/stylesheet/_variables.scss";*/
-@import "packages/bitters/base/base";
+//@import "client/stylesheet/_variables.scss";
+@import "client/libs/bitters/base/base";
 
-@import "packages/bbfc:refills/refills/video.scss";
-@import "packages/bbfc:refills/refills/modal.scss";
+@import "client/libs/refills/video.scss";
+@import "client/libs/refills/modal.scss";
 
 @import "client/stylesheet/_buttons.scss";
 @import "client/utils/datgui/_debugger.scss";

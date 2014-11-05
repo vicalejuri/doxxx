@@ -1,7 +1,7 @@
 {
   "includePaths": [
-    "packages/bourbon",
-    "packages/bitters/base",
-    "packages/neat"
+    "client/libs/bourbon",
+    "client/libs/base",
+    "client/libs/neat"
   ]
 }

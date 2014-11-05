@@ -1,0 +1,8 @@
+{
+    "name": "bitters",
+    "description": "Bitters - Scaffold styles, variables, and structure for Bourbon projects.",
+    "homepage": "https://github.com/CiaraBurkett/meteor-bitters",
+    "author": "Ciara Burkett (http://ciara.io)",
+    "version": "1.0.0",
+    "git": "https://github.com/CiaraBurkett/meteor-bitters.git"
+}
