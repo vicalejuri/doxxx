@@ -22,6 +22,7 @@
         changed:   'layout.changed'
 
 @SessEnum =
+    loading:              'loading'
     page:                 'frontpage'
     channels:
         selected:         'channels.selected'            # Name of selected channel

@@ -12,3 +12,4 @@ SchemasField.updatedAt =
         return new Date         if (this.isUpdate)
     denyInsert: true
     optional:   true
+

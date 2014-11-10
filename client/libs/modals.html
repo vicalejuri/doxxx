@@ -1,0 +1,22 @@
+<!-- MODAL Template block
+
+    Use it as 
+
+    {{#modal id="mymodal"}}
+        <div class="mymodal">
+            <h1>INLINE CONTENT OF MODAL</h1>
+        </div>
+    {{/modal}}
+-->
+<template name="modal">
+  <div class="modal">
+    <input class="modal-state" id="modal-{{id}}" data-modal="{{id}}" type="checkbox" />
+    <div class="modal-window">
+      <div class="modal-inner">
+        <label class="modal-close" for="modal-{{id}}"></label>
+        {{> UI.contentBlock}}
+      </div>
+    </div>
+  </div>
+</template>
+

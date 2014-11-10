@@ -16,8 +16,8 @@ class _AppLog
     @group: ->
         console.groupCollapsed( "#{@name}" )
 
-    @endGroup: ->
-        console.endGroup()
+    @groupEnd: ->
+        console.groupEnd()
 
 @AppLog = _AppLog
 @DoxxLog = new AppLog('AppLog')

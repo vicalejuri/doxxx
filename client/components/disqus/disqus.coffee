@@ -38,8 +38,6 @@ Template.disqus_comments.created = ->
             $('#disqus_thread').height(frameHeight)
        ]
 
-@disqus_config
-
 
 Template.disqus_comments.rendered = ->
     return if not DISQUS?

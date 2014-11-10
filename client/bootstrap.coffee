@@ -2,8 +2,8 @@
     Default session variables and values
 ###
 Meteor.startup ->
-    AppLog.group()
-    AppLog.log("Cleaning Session state...")
+    #AppLog.group()
+    #AppLog.log("Cleaning Session state...")
 
     Session.setDefault( SessEnum.channels.selected,     [Meteor.settings.public.channels.default ])
     Session.setDefault( SessEnum.channels.object,              null )
@@ -11,5 +11,5 @@ Meteor.startup ->
     Session.setDefault( SessEnum.post.upload.preview_post,     null )
     Session.setDefault( SessEnum.post.current,                 null )
 
-    AppLog.log("DONE")
-    AppLog.endGroup()
+    #AppLog.log("DONE")
+    #AppLog.groupEnd()

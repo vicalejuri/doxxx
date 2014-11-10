@@ -1,2 +1,0 @@
-Template.hello.greeting = ->
-    "Greetingz!"

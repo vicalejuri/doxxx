@@ -1,34 +1,3 @@
-###
-
-,---.     |
-`---.,---.|---.,---.,-.-.,---.,---.
-    ||    |   ||---'| | |,---|`---.
-`---'`---'`   '`---'` ' '`---^`---'
-
-###
-
-@Schemas = {}
-Schemas.Channel = new SimpleSchema
-    name:
-        type:   String,
-        label:  "Name",
-        max:    1024
-
-    slug:
-        type:   String,
-        label:  "slug",
-        max:    30
-
-    admin:
-        type:   String,
-        label:  "Admin"
-
-    summary:
-        type:   String,
-        label:  "All POSTS",
-        optional: true
-
-
 Schemas.Post = new SimpleSchema
     createdAt: SchemasField.createdAt
     updatedAt: SchemasField.updatedAt
@@ -146,3 +115,44 @@ Schemas.UploadPost = new SimpleSchema
         type: [String]
         label: "Comma separated tags",
         optional: true
+
+
+Models.Posts         = new Meteor.Collection "posts"
+Models.Posts.attachSchema( Schemas.Post )
+
+PostLogger = new AppLog('Posts')
+
+### 
+    Create a post from a given URL. 
+    
+    Asynchronous, pass a cb please.
+###
+Models.Posts.fetchURL = (url, cb) ->
+    _info = Meteor.call 'getURLInfo', url, 
+        (err, res) =>
+            if err?
+                postLogger.error('(Post.previewURL)', "Failed extraction of #{url}")
+
+            _data = if err then {url: url} else res
+            _post = Models.Posts.clone( _data )
+
+            cb(err, _post )
+
+
+###
+    Clone from a object of data. 
+###
+Models.Posts.clone = (embed_data) ->
+    _cloned = _.extend(  _.pick(embed_data, 'type','url','title','description'),
+                        {
+                            channels:   [ Meteor.settings.public.channels.default ],
+                            tags:    []
+                            #authors: [   _.pick(embed_data, 'author_name','author_url') , ],
+                            images:  [   _.pick(embed_data, 'thumbnail_url','thumbnail_width','thumbnail_height') , ] ,
+                            media:   [   _.pick(embed_data, 'html', 'width','height','url') , ]  
+                        })
+
+
+Models.Posts.allow
+    insert: (userId, channel) ->
+        return true

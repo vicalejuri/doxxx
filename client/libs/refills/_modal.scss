@@ -2,30 +2,6 @@
   $modal-padding: 3em;
   $modal-background: $base-background-color;
   $modal-close-color: $light-gray;
-  $modal-image-height: 135px;
-  $modal-image-width: $modal-image-height;
-
-  label {
-    cursor: pointer;
-    margin-bottom: 0;
-  }
-
-  label img {
-    $img-width: 300px;
-    border-radius: $img-width/2;
-    display: block;
-    max-width: $img-width;
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  .btn {
-    @include button(simple, $pink);
-    font-size: $base-font-size;
-    margin-bottom: $base-line-height;
-  }
 
   .modal-open {
     overflow: hidden;
@@ -33,13 +9,15 @@
 
   .modal-window { // overlay
     @include transition(all .35s $ease-out-quart);
-    @include position(absolute, 0px 0px 0px 0px);
+    @include position(fixed, 0px 0px 0px 0px);
 
     background: rgba(0,0,0, .95);
     opacity: 0;
     text-align: left;
-    visibility: hidden;
     z-index: 99999999999;
+
+    visibility: hidden;
+    backface-visibility: hidden;
 
     .modal-bg {
       @include position(absolute, 0px 0px 0px 0px);
@@ -47,6 +25,7 @@
     }
   }
 
+  // Close button
   .modal-close {
     @include position(absolute, ($modal-padding /2) ($modal-padding /2) 0 0);
     @include size(1.5em);
@@ -137,6 +116,11 @@
     }
   }
 
+  // Checked state
+  input[type="checkbox"] {
+    display: none;
+  }
+
   .modal-state:checked + .modal-window {
     opacity: 1;
     visibility: visible;
@@ -149,3 +133,27 @@
 }
 
 // Based on code by Kasper Mikiewicz
+// http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/
+
+.md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(143,27,15,0.8);
+
+    @include transition(all .35s $ease-out-quart);
+    @include transform( scale3D( 0.85, 0.85, 1 ) )
+}
+
+.modal-perspective ,
+.modal-perspective body {
+    height: 100%;
+    overflow: hidden;
+
+    @include transform( scale3D( 0.85, 0.85, 1 ) )
+}

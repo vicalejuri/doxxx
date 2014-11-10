@@ -11,6 +11,7 @@ amplify@1.0.0
 application-configuration@1.0.3
 autoupdate@1.1.3
 base64@1.0.1
+bengott:avatar@0.5.1
 binary-heap@1.0.1
 blaze-tools@1.0.1
 blaze@2.0.3
@@ -43,6 +44,9 @@ iron:location@1.0.0
 iron:middleware-stack@1.0.0
 iron:router@1.0.0
 iron:url@1.0.0
+jparker:crypto-core@0.1.0
+jparker:crypto-md5@0.1.1
+jparker:gravatar@0.3.0
 jquery@1.0.1
 json@1.0.1
 launch-screen@1.0.0
@@ -70,6 +74,8 @@ oauth2@1.1.1
 oauth@1.1.2
 observe-sequence@1.0.3
 ordered-dict@1.0.1
+percolate:momentum@0.6.1
+percolate:velocityjs@1.0.0
 random@1.0.1
 reactive-dict@1.0.4
 reactive-var@1.0.3
@@ -80,15 +86,19 @@ service-configuration@1.0.2
 session@1.0.4
 sha@1.0.1
 showdown@1.0.2
+softwarerero:accounts-t9n@1.0.0
 spacebars-compiler@1.0.3
 spacebars@1.0.3
 srp@1.0.1
 standard-app-packages@1.0.3
+stylus@1.0.5
 templating@1.0.9
 tracker@1.0.3
 ui@1.0.4
 underscore@1.0.1
 url@1.0.2
+useraccounts:core@1.1.1
+useraccounts:unstyled@1.1.1
 webapp-hashing@1.0.1
 webapp@1.1.4
 williamledoux:static-server@0.1.2

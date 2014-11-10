@@ -1,5 +1,6 @@
-Template.videofeed.posts = ->
-    return Models.Posts.find()
+Template.videofeed.helpers = 
+    'posts': ->
+        return Models.Posts.find()
 
 Template.gridItem.events =
     'click .grid-item': ( ev, tmpl ) ->

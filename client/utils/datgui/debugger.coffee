@@ -5,22 +5,21 @@ Template.session_debug.rendered = ->
 
     session_obj = Session.keys
 
+    gui.add( session_obg, 'loading' )
+
     try
         channels = gui.addFolder( 'Channels' )
         channels.add( session_obj , 'channels.selected' )
         channels.add( session_obj , 'channels.selected_object' )
-    catch
-        0
+    catch err
+        console.error(err)
 
     try
         posts = gui.addFolder( 'Post' )
         posts.add( session_obj , 'post.watching' )
         posts.add( session_obj , 'post.preview_url' )
         posts.add( session_obj , 'post.preview_post' )
-    catch
-        0
+    catch err
+        console.error(err)
 
     $('.debug-pane').append( gui.domElement )
-
-UI.registerHelper 'log', (data, ctx) -> 
-        console.log data

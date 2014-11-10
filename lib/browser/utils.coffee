@@ -34,3 +34,22 @@
       cancel_cb.call( this, ev )         if not value 
 
   evts
+
+
+
+# Retrieve current template
+getCurrentTemplate =  ->
+  Router.current().lookupTemplate()
+
+# Retrieve current route
+getCurrentRoute = ->
+  Router._currentController.path
+
+isAdmin = (user) ->
+    user and user.isAdmin
+
+setAdmin = (user, adm_flag) ->
+    user.isAdmin = (not adm_flag)
+
+getAvatarUrl = (user) ->
+    Avatar.getUrl( user )

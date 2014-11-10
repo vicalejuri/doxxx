@@ -5,11 +5,11 @@
 @post_subscribe = null
 Meteor.startup ->
   Tracker.autorun ->
-    channels = Session.get( SessEnum.channels.selected )
-    if channel?
-      post_subscribe = Meteor.subscribe 'posts_from_channel', channels
-    else
-      post_subcribe  = Meteor.subscribe  'userfeed_posts'
+    #channels = Session.get( SessEnum.channels.selected )
+    #if channel?
+    #  post_subscribe = Meteor.subscribe 'channel_posts', channels
+    #else
+    #  post_subcribe  = Meteor.subscribe  'userfeed_posts'
 
-    all_channels_subs = Meteor.subscribe 'all_channels', ->
-        @all_channels = Models.Channels.find()
+    #all_channels_subs = Meteor.subscribe 'all_channels', ->
+    #    @all_channels = Models.Channels.find()

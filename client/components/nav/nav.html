@@ -1,0 +1,15 @@
+<template name="userMenu">
+    {{#if isLoggedIn}}
+        <div class="user-menu dropdown header-submodule">
+        <a class="view dropdown-top-level" href="/">{{name}}</a>
+        <div class="dropdown-menu">
+            <ul role="menu" aria-labelledby="dLabel">
+            <li><a href="/account">Account</a></li> 
+            <li><a href="/sign-out">Sign Out</a></li>
+            </ul>
+        </div>
+        </div>
+    {{else}}
+        <a class="account-link sign-in" href="/sign-in">Sign in</a>
+    {{/if}}
+</template>
